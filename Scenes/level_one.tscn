@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://blpwp35s66g3e"]
+
+[ext_resource type="PackedScene" uid="uid://b8i1pshh4v0o" path="res://Prefabs/balance_beam_blue.tscn" id="1_xb256"]
+[ext_resource type="PackedScene" uid="uid://dkntxiqy4o61a" path="res://Prefabs/ball.tscn" id="2_0n17p"]
+[ext_resource type="PackedScene" uid="uid://cw0ep4dya3wh3" path="res://Prefabs/balance_beam_red.tscn" id="3_5ib5a"]
+[ext_resource type="Script" path="res://Scripts/balance_beam_red.gd" id="4_w8xq5"]
+[ext_resource type="Script" path="res://Prefabs/ball.gd" id="5_67g8j"]
+[ext_resource type="Script" path="res://Scenes/Checkpoint.gd" id="5_b7lts"]
+[ext_resource type="Script" path="res://Scenes/Camera2D.gd" id="5_xm6yu"]
+[ext_resource type="PackedScene" uid="uid://b65hpmj5ltkel" path="res://Prefabs/checkpoint.tscn" id="7_o1635"]
+[ext_resource type="Script" path="res://Scenes/Death Border.gd" id="8_m2lfp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7jyx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a416q"]
+distance = -832.0
+
+[node name="Level One" type="Node2D"]
+
+[node name="Balance Beam Blue" parent="." instance=ExtResource("1_xb256")]
+position = Vector2(210, 566)
+
+[node name="Balance Beam Red" parent="." instance=ExtResource("3_5ib5a")]
+position = Vector2(923, 451)
+script = ExtResource("4_w8xq5")
+
+[node name="Ball" parent="." instance=ExtResource("2_0n17p")]
+position = Vector2(200, 200)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("5_67g8j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574.01, 329.757)
+rotation = 0.0152427
+scale = Vector2(0.921019, 0.939469)
+position_smoothing_speed = 0.5
+rotation_smoothing_speed = 0.0
+script = ExtResource("5_xm6yu")
+
+[node name="Checkpoint" type="Area2D" parent="."]
+position = Vector2(728, 329)
+scale = Vector2(-0.0481145, 456.27)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_b7lts")
+x = 1250.0
+y = 329.0
+zoom = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint"]
+position = Vector2(-241.82, -0.41163)
+scale = Vector2(-29.0774, 1)
+shape = SubResource("RectangleShape2D_n7jyx")
+
+[node name="Balance Beam Blue2" parent="." instance=ExtResource("1_xb256")]
+position = Vector2(1670, 385)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("7_o1635")]
+position = Vector2(1385, 226)
+x = 1500.0
+y = 226.0
+
+[node name="Checkpoint3" type="Area2D" parent="."]
+position = Vector2(1142, 332)
+scale = Vector2(-0.0481145, 456.27)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_b7lts")
+x = 1250.0
+y = 329.0
+zoom = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint3"]
+position = Vector2(-241.82, -0.41163)
+scale = Vector2(-29.0774, 1)
+shape = SubResource("RectangleShape2D_n7jyx")
+
+[node name="Death Border" type="Area2D" parent="."]
+script = ExtResource("8_m2lfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death Border"]
+shape = SubResource("WorldBoundaryShape2D_a416q")
+
+[connection signal="body_entered" from="Checkpoint" to="Checkpoint" method="_on_body_entered"]
+[connection signal="move_to" from="Checkpoint" to="Camera2D" method="_on_checkpoint_move_to"]
+[connection signal="move_to" from="Checkpoint2" to="Camera2D" method="_on_checkpoint_move_to"]
+[connection signal="body_entered" from="Checkpoint3" to="Checkpoint3" method="_on_body_entered"]
+[connection signal="move_to" from="Checkpoint3" to="Camera2D" method="_on_checkpoint_move_to"]
+[connection signal="body_entered" from="Death Border" to="Ball" method="_on_death_border_body_entered"]
+[connection signal="body_entered" from="Death Border" to="Camera2D" method="_on_death_border_body_entered"]

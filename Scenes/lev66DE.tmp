@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://blpwp35s66g3e"]
+
+[ext_resource type="Texture2D" uid="uid://bhf1orv0mq0lo" path="res://Assets/ball.png" id="1_0gg30"]
+[ext_resource type="Script" path="res://Scenes/Balance Beam Blue.gd" id="2_crmvb"]
+[ext_resource type="Texture2D" uid="uid://g0hs4hrroa7o" path="res://Assets/beamblue.png" id="3_q51ci"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_la7kx"]
+radius = 63.0317
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_max_angle = 3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(523, 193)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_0gg30")
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(523, 193)
+scale = Vector2(0.501834, 0.5)
+shape = SubResource("CircleShape2D_la7kx")
+
+[node name="Balance Beam Blue" type="CharacterBody2D" parent="."]
+script = ExtResource("2_crmvb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Balance Beam Blue"]
+position = Vector2(474, 413)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_q51ci")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Balance Beam Blue"]
+position = Vector2(510, 394)
+polygon = PackedVector2Array(37, -38, 47, -43, 59, -43, 68, -39, 75, -32, 78, -24, 79, -16, 77, -8, 74, -1, 22, 49, -196, 49, -245, -1, -250, -10, -251, -20, -249, -29, -245, -36, -238, -41, -228, -44, -219, -43, -213, -40, -172, 0, -1, 0)

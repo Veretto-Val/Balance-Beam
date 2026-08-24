@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8i1pshh4v0o"]
+
+[ext_resource type="Script" path="res://Scenes/Balance Beam Blue.gd" id="1_efgn2"]
+[ext_resource type="Texture2D" uid="uid://g0hs4hrroa7o" path="res://Assets/beamblue.png" id="2_4lif6"]
+
+[node name="Balance Beam Blue" type="CharacterBody2D"]
+position = Vector2(530, 482)
+script = ExtResource("1_efgn2")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(51, -6)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_4lif6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(88, -25)
+polygon = PackedVector2Array(37, -38, 47, -43, 59, -43, 68, -39, 75, -32, 78, -24, 79, -16, 77, -8, 74, -1, 22, 49, -196, 49, -245, -1, -250, -10, -251, -20, -249, -29, -245, -36, -238, -41, -228, -44, -219, -43, -213, -40, -172, 0, -1, 0)
