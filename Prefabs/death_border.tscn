@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dahbs4qkv08mj"]
+
+[ext_resource type="Script" uid="uid://ck1eogdj7xb1c" path="res://Scenes/Death Border.gd" id="1_a2hcc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a416q"]
+distance = -832.0
+
+[node name="Death Border" type="Area2D" unique_id=944357562]
+script = ExtResource("1_a2hcc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1905432674]
+shape = SubResource("WorldBoundaryShape2D_a416q")

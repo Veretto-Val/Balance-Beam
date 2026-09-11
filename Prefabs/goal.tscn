@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dgn7mnrk60qh3"]
+
+[ext_resource type="Texture2D" uid="uid://bekj45lkswlor" path="res://Assets/GoalTemp.png" id="1_sq1ty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpqb8"]
+size = Vector2(875, 348)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s241u"]
+size = Vector2(974.5, 239)
+
+[node name="Goal" type="StaticBody2D" unique_id=1433699395]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1819158949]
+position = Vector2(-240, 19)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1347639246]
+position = Vector2(103.5, 191)
+shape = SubResource("RectangleShape2D_cpqb8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=147866711]
+texture = ExtResource("1_sq1ty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=74250119]
+position = Vector2(-125.25, 264.5)
+shape = SubResource("RectangleShape2D_s241u")

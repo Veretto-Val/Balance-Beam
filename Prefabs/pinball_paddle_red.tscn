@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4n6ogutigx1e"]
 
-[ext_resource type="Script" uid="uid://cdcguwrtt6fdf" path="res://Prefabs/pinball_paddle_red.gd" id="1_ayws2"]
+[ext_resource type="Script" uid="uid://cdcguwrtt6fdf" path="res://Scripts/pinball_paddle_red.gd" id="1_ayws2"]
 [ext_resource type="Texture2D" uid="uid://bp6b5quc25ser" path="res://Assets/PinballPaddleRed.png" id="2_0dhrk"]
 
 [node name="PinballPaddleBlue" type="CharacterBody2D" unique_id=1103801459]

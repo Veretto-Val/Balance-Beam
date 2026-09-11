@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnhg6t14fdy32"]
+[gd_scene format=3 uid="uid://cnhg6t14fdy32"]
 
-[ext_resource type="Script" path="res://PinballPaddleBlue.gd" id="1_rpym5"]
+[ext_resource type="Script" uid="uid://cpgi8m0hj866i" path="res://Scripts/PinballPaddleBlue.gd" id="1_rpym5"]
 [ext_resource type="Texture2D" uid="uid://bjfkmkgfdhr51" path="res://Assets/PinballPaddleBlue.png" id="2_hur4v"]
 
 [node name="PinballPaddleBlue" type="CharacterBody2D"]

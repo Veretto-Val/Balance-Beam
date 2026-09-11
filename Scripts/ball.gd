@@ -10,7 +10,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if (is_equal_approx(linear_velocity.x, 0) && 
+	is_equal_approx(linear_velocity.y, 0)):
+		apply_central_impulse(Vector2(1, 1))
+		
 
 func _integrate_forces(state):
 	if reset:

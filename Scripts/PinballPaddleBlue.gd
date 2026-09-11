@@ -7,17 +7,19 @@ var goFast = false
 var speed = 0
 var targetRadians
 var startRadians
+func round_to_dec(num, digit):
+	return round(num * pow(10.0, digit)) / pow(10.0, digit)
 
 func _ready():
 	startRadians = rotation
 	targetRadians = rotation - 1
 
 func _process(delta):
-	if rotation == targetRadians:
+	if is_equal_approx(rotation, targetRadians):
 		flipped = true
 		goFast = false
 		goSlow = false
-	elif rotation == startRadians:
+	elif is_equal_approx(rotation, targetRadians):
 		flipped = false
 	
 	if ((Input.is_action_pressed("Blue Left") or Input.is_action_pressed("Blue Right"))

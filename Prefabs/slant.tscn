@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c1irfisp5nvlb"]
+
+[ext_resource type="Texture2D" uid="uid://tt6u5kafkqy" path="res://Assets/Slant.png" id="1_osi5r"]
+
+[node name="Slant" type="StaticBody2D" unique_id=740505630]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2129235696]
+texture = ExtResource("1_osi5r")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1504558815]
+position = Vector2(-586, 219)
+polygon = PackedVector2Array(42, -482, 1132, 71, 1138, 77, 1142, 83, 1143, 92, 1143, 100, 1139, 106, 1134, 112, 1127, 117, 1120, 118, 1115, 119, 28, 120, 20, 119, 12, 114, 8, 109, 3, 98, 5, -458, 8, -467, 14, -474, 22, -480, 31, -482, 37, -483)
