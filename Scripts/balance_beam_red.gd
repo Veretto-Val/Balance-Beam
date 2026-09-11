@@ -12,9 +12,9 @@ func _process(delta):
 		if strong:
 			rotate(-0.1)
 		else:
-			rotate(-0.05)
+			rotate(-0.02)
 	if Input.is_action_pressed("Red Right"):
 		if strong:
 			rotate(0.1)
 		else:
-			rotate(0.05)
+			rotate(0.02)

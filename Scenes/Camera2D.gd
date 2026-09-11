@@ -33,6 +33,7 @@ func _process(delta):
 	
 
 func _on_checkpoint_move_to(x, y, z):
+	print(x)
 	targetX = x
 	targetY = y
 	zoom.x = z

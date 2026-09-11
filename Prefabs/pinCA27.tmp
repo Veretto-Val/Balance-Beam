@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4n6ogutigx1e"]
+
+[ext_resource type="Script" path="res://Prefabs/pinball_paddle_red.gd" id="1_ayws2"]
+[ext_resource type="Texture2D" uid="uid://bp6b5quc25ser" path="res://Assets/PinballPaddleRed.png" id="2_0dhrk"]
+
+[node name="PinballPaddleBlue" type="CharacterBody2D"]
+rotation = -0.359538
+scale = Vector2(-1, -1)
+script = ExtResource("1_ayws2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(497, 105)
+texture = ExtResource("2_0dhrk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-27, -1, -15, -32, 3, -52, 28, -67, 54, -76, 87, -77, 99, -74, 508, 78, 509, 84, 509, 90, 504, 91, 58, 92, 41, 88, 25, 82, 12, 74, -2, 64, -13, 50, -20, 37, -25, 21)
