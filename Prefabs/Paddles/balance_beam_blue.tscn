@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8i1pshh4v0o"]
+[gd_scene format=3 uid="uid://b8i1pshh4v0o"]
 
-[ext_resource type="Script" path="res://Scenes/Balance Beam Blue.gd" id="1_efgn2"]
+[ext_resource type="Script" uid="uid://b0ex2brjf4s0i" path="res://Scripts/Balance Beam Blue.gd" id="1_efgn2"]
 [ext_resource type="Texture2D" uid="uid://g0hs4hrroa7o" path="res://Assets/beamblue.png" id="2_4lif6"]
 
 [node name="Balance Beam Blue" type="CharacterBody2D"]

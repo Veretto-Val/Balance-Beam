@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cmdemw3bubbim"]
+
+[ext_resource type="PackedScene" uid="uid://dkntxiqy4o61a" path="res://Prefabs/ball.tscn" id="1_72vtx"]
+[ext_resource type="PackedScene" uid="uid://dbqulmtymx0wg" path="res://Prefabs/camera_2d.tscn" id="2_lfs58"]
+[ext_resource type="PackedScene" uid="uid://dgn7mnrk60qh3" path="res://Prefabs/goal.tscn" id="3_m7216"]
+
+[node name="Level Two" type="Node2D" unique_id=103295091]
+
+[node name="Ball" parent="." unique_id=445317647 instance=ExtResource("1_72vtx")]
+position = Vector2(126, 136)
+
+[node name="Camera2D" parent="." unique_id=1435055010 instance=ExtResource("2_lfs58")]
+position = Vector2(577, 323)
+
+[node name="Goal" parent="." unique_id=1433699395 instance=ExtResource("3_m7216")]
+position = Vector2(608, 466)

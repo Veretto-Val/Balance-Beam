@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dahbs4qkv08mj"]
 
-[ext_resource type="Script" uid="uid://ck1eogdj7xb1c" path="res://Scenes/Death Border.gd" id="1_a2hcc"]
+[ext_resource type="Script" uid="uid://ck1eogdj7xb1c" path="res://Scripts/Death Border.gd" id="1_a2hcc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a416q"]
 distance = -832.0

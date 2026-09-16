@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b65hpmj5ltkel"]
+[gd_scene format=3 uid="uid://b65hpmj5ltkel"]
 
-[ext_resource type="Script" path="res://Scenes/Checkpoint.gd" id="1_j0qlk"]
+[ext_resource type="Script" uid="uid://gc4soqj3hnrj" path="res://Scripts/Checkpoint.gd" id="1_j0qlk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7jyx"]
 

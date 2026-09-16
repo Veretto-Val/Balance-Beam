@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cw0ep4dya3wh3"]
 
-[ext_resource type="PackedScene" uid="uid://b8i1pshh4v0o" path="res://Prefabs/balance_beam_blue.tscn" id="1_e8fuf"]
+[ext_resource type="PackedScene" uid="uid://b8i1pshh4v0o" path="res://Prefabs/Paddles/balance_beam_blue.tscn" id="1_e8fuf"]
 [ext_resource type="Texture2D" uid="uid://ie5ruiws6g1s" path="res://Assets/beamred.png" id="2_pdpui"]
 [ext_resource type="Script" uid="uid://dih6av47aswwr" path="res://Scripts/balance_beam_red.gd" id="2_rigx2"]
 

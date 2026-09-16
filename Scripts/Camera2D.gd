@@ -23,6 +23,11 @@ func _init():
 	targetX = startX
 	targetY = startY
 	targetZoom = startZoom
+	
+func _ready() -> void:
+	var checkpoints = get_tree().get_nodes_in_group("Checkpoints")
+	for cPoint in checkpoints:
+		cPoint.move_to.connect(_on_checkpoint_move_to)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

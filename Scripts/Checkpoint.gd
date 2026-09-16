@@ -6,6 +6,8 @@ extends Area2D
 
 signal move_to(x, y, zoom)
 
+func _init() -> void:
+	add_to_group("Checkpoints")
 
 
 func _on_body_entered(body):

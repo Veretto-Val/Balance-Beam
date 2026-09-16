@@ -1,51 +1,14 @@
 [gd_scene format=3 uid="uid://blpwp35s66g3e"]
 
-[ext_resource type="PackedScene" uid="uid://b8i1pshh4v0o" path="res://Prefabs/balance_beam_blue.tscn" id="1_xb256"]
+[ext_resource type="PackedScene" uid="uid://b8i1pshh4v0o" path="res://Prefabs/Paddles/balance_beam_blue.tscn" id="1_xb256"]
 [ext_resource type="PackedScene" uid="uid://dkntxiqy4o61a" path="res://Prefabs/ball.tscn" id="2_0n17p"]
-[ext_resource type="PackedScene" uid="uid://dahbs4qkv08mj" path="res://Prefabs/death_border.tscn" id="4_b7vm3"]
-[ext_resource type="Script" uid="uid://r8p4s65wqwu5" path="res://Scenes/label.gd" id="4_ep8vc"]
+[ext_resource type="PackedScene" uid="uid://dbqulmtymx0wg" path="res://Prefabs/camera_2d.tscn" id="3_ys0qe"]
+[ext_resource type="PackedScene" uid="uid://dahbs4qkv08mj" path="res://Prefabs/Environment/death_border.tscn" id="4_b7vm3"]
 [ext_resource type="Script" uid="uid://drc61yauivmst" path="res://Scripts/ball.gd" id="5_67g8j"]
-[ext_resource type="Script" uid="uid://cg4gl2ybhvx41" path="res://Scenes/Camera2D.gd" id="5_xm6yu"]
-[ext_resource type="PackedScene" uid="uid://b65hpmj5ltkel" path="res://Prefabs/checkpoint.tscn" id="7_o1635"]
-[ext_resource type="PackedScene" uid="uid://c1irfisp5nvlb" path="res://Prefabs/slant.tscn" id="8_ys0qe"]
+[ext_resource type="PackedScene" uid="uid://b65hpmj5ltkel" path="res://Prefabs/Environment/checkpoint.tscn" id="7_o1635"]
+[ext_resource type="PackedScene" uid="uid://c1irfisp5nvlb" path="res://Prefabs/Environment/slant.tscn" id="8_ys0qe"]
 [ext_resource type="PackedScene" uid="uid://dgn7mnrk60qh3" path="res://Prefabs/goal.tscn" id="9_ys0qe"]
-[ext_resource type="PackedScene" uid="uid://cnhg6t14fdy32" path="res://Prefabs/pinball_paddle_blue.tscn" id="10_166gr"]
-
-[sub_resource type="FontFile" id="FontFile_ys0qe"]
-resource_name = "font"
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/90/0/ascent = 0.0
-cache/0/90/0/descent = 0.0
-cache/0/90/0/underline_position = 0.0
-cache/0/90/0/underline_thickness = 0.0
-cache/0/90/0/scale = 1.0
-cache/0/7500/0/ascent = 0.0
-cache/0/7500/0/descent = 0.0
-cache/0/7500/0/underline_position = 0.0
-cache/0/7500/0/underline_thickness = 0.0
-cache/0/7500/0/scale = 1.0
-cache/0/750/0/ascent = 0.0
-cache/0/750/0/descent = 0.0
-cache/0/750/0/underline_position = 0.0
-cache/0/750/0/underline_thickness = 0.0
-cache/0/750/0/scale = 1.0
-
-[sub_resource type="Theme" id="Theme_s241u"]
-default_font = SubResource("FontFile_ys0qe")
-default_font_size = 750
+[ext_resource type="PackedScene" uid="uid://cnhg6t14fdy32" path="res://Prefabs/Paddles/pinball_paddle_blue.tscn" id="10_166gr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ys0qe"]
 font_size = 60
@@ -58,37 +21,8 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("5_67g8j")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1272839861]
+[node name="Camera2D" parent="." unique_id=1435055010 instance=ExtResource("3_ys0qe")]
 position = Vector2(574.01, 329.757)
-rotation = 0.0152427
-scale = Vector2(0.921019, 0.939469)
-position_smoothing_speed = 0.5
-rotation_smoothing_speed = 0.0
-script = ExtResource("5_xm6yu")
-
-[node name="Control" type="Control" parent="Camera2D" unique_id=1321924276]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -67.481255
-offset_top = -9.378376
-offset_right = -27.481255
-offset_bottom = 30.621624
-theme = SubResource("Theme_s241u")
-
-[node name="Label" type="Label" parent="Camera2D/Control" unique_id=1994973732]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -2.8066623
-anchor_top = -0.6766303
-anchor_right = 4.3933377
-anchor_bottom = 0.8483696
-offset_right = 40.0
-offset_bottom = 63.0
-text = "Victory!"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("4_ep8vc")
 
 [node name="Death Border" parent="." unique_id=944357562 instance=ExtResource("4_b7vm3")]
 position = Vector2(10628, 3534)
@@ -183,12 +117,6 @@ offset_bottom = 165.0
 text = "Use WASD to control the blue paddles!"
 
 [connection signal="body_entered" from="Death Border" to="Ball" method="_on_death_border_body_entered"]
-[connection signal="body_entered" from="Death Border" to="Camera2D" method="_on_death_border_body_entered"]
-[connection signal="move_to" from="Checkpoints/Checkpoint" to="Camera2D" method="_on_checkpoint_move_to"]
-[connection signal="move_to" from="Checkpoints/Checkpoint2" to="Camera2D" method="_on_checkpoint_move_to"]
-[connection signal="move_to" from="Checkpoints/Checkpoint3" to="Camera2D" method="_on_checkpoint_move_to"]
-[connection signal="move_to" from="Checkpoints/Checkpoint4" to="Camera2D" method="_on_checkpoint_move_to"]
-[connection signal="body_entered" from="Goal/Area2D" to="Camera2D/Control/Label" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Goal/Area2D" to="Death Border" method="_on_area_2d_body_entered"]
 
 [editable path="Goal"]

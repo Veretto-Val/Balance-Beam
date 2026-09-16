@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Balance Beam"
-run/main_scene="res://Scenes/level_one.tscn"
+run/main_scene="uid://lqg00jb1m1gl"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 

@@ -6,7 +6,7 @@
 size = Vector2(875, 348)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s241u"]
-size = Vector2(974.5, 239)
+size = Vector2(971, 230)
 
 [node name="Goal" type="StaticBody2D" unique_id=1433699395]
 
@@ -23,5 +23,5 @@ shape = SubResource("RectangleShape2D_cpqb8")
 texture = ExtResource("1_sq1ty")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=74250119]
-position = Vector2(-125.25, 264.5)
+position = Vector2(-126.5, 263)
 shape = SubResource("RectangleShape2D_s241u")
