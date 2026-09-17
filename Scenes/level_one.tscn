@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dkntxiqy4o61a" path="res://Prefabs/ball.tscn" id="2_0n17p"]
 [ext_resource type="PackedScene" uid="uid://dbqulmtymx0wg" path="res://Prefabs/camera_2d.tscn" id="3_ys0qe"]
 [ext_resource type="PackedScene" uid="uid://dahbs4qkv08mj" path="res://Prefabs/Environment/death_border.tscn" id="4_b7vm3"]
-[ext_resource type="Script" uid="uid://drc61yauivmst" path="res://Scripts/ball.gd" id="5_67g8j"]
 [ext_resource type="PackedScene" uid="uid://b65hpmj5ltkel" path="res://Prefabs/Environment/checkpoint.tscn" id="7_o1635"]
 [ext_resource type="PackedScene" uid="uid://c1irfisp5nvlb" path="res://Prefabs/Environment/slant.tscn" id="8_ys0qe"]
 [ext_resource type="PackedScene" uid="uid://dgn7mnrk60qh3" path="res://Prefabs/goal.tscn" id="9_ys0qe"]
@@ -17,9 +16,6 @@ font_size = 60
 
 [node name="Ball" parent="." unique_id=1703225557 instance=ExtResource("2_0n17p")]
 position = Vector2(200, 200)
-collision_layer = 3
-collision_mask = 3
-script = ExtResource("5_67g8j")
 
 [node name="Camera2D" parent="." unique_id=1435055010 instance=ExtResource("3_ys0qe")]
 position = Vector2(574.01, 329.757)
@@ -117,6 +113,8 @@ offset_bottom = 165.0
 text = "Use WASD to control the blue paddles!"
 
 [connection signal="body_entered" from="Death Border" to="Ball" method="_on_death_border_body_entered"]
+[connection signal="body_entered" from="Death Border" to="Camera2D" method="_on_death_border_body_entered"]
 [connection signal="body_entered" from="Goal/Area2D" to="Death Border" method="_on_area_2d_body_entered"]
 
+[editable path="Camera2D"]
 [editable path="Goal"]

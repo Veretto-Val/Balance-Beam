@@ -27,6 +27,7 @@ func _init():
 func _ready() -> void:
 	var checkpoints = get_tree().get_nodes_in_group("Checkpoints")
 	for cPoint in checkpoints:
+		print("Thats one")
 		cPoint.move_to.connect(_on_checkpoint_move_to)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

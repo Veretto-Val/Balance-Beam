@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://o2f2cergl618"]
+
+[ext_resource type="Texture2D" uid="uid://b46dg7md1ua50" path="res://Assets/rectangle.png" id="1_mpotc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lamej"]
+bounce = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s241u"]
+size = Vector2(131, 424)
+
+[node name="Rectangle" type="StaticBody2D" unique_id=2083359185]
+physics_material_override = SubResource("PhysicsMaterial_lamej")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1515186745]
+position = Vector2(181, -24)
+scale = Vector2(0.6953125, 0.46944445)
+texture = ExtResource("1_mpotc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=563758424]
+position = Vector2(-1.5, 3)
+shape = SubResource("RectangleShape2D_s241u")

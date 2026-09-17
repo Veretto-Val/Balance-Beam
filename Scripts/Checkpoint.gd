@@ -11,4 +11,5 @@ func _init() -> void:
 
 
 func _on_body_entered(body):
+	print("entered")
 	move_to.emit(x, y, zoom)
