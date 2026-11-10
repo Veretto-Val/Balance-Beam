@@ -8,23 +8,26 @@ var speedIncrease = 0.3
 var zoomSpeed = 0.01
 
 
-var startX = 575
-var startY = 330
-var startZoom = 1
-var targetX = 0
-var targetY = 0
-var targetZoom = 0
+@export var startX: int
+@export var startY: int
+@export var startZoom: float
+var targetX
+var targetY
+var targetZoom
 
 
 
 
 
-func _init():
+#func _init():
+	#targetX = startX
+	#targetY = startY
+	#targetZoom = startZoom
+	
+func _ready() -> void:
 	targetX = startX
 	targetY = startY
 	targetZoom = startZoom
-	
-func _ready() -> void:
 	var checkpoints = get_tree().get_nodes_in_group("Checkpoints")
 	for cPoint in checkpoints:
 		print("Thats one")
@@ -52,7 +55,11 @@ func _process(delta):
 		speedX = 0
 		speedY = 0
 		
-	if (zoom.x != targetZoom):
+	if (zoom.x != targetZoom): 
+		print("Zoom x:")
+		print(zoom.x)
+		print("Target:")
+		print(targetZoom)
 		var temp = move_toward(zoom.x, targetZoom, zoomSpeed)
 		zoom.x = temp
 		zoom.y = temp

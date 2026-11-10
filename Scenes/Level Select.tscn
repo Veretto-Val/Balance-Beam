@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://lqg00jb1m1gl"]
 
 [ext_resource type="Script" uid="uid://jbcve43ajlh1" path="res://Scripts/button.gd" id="1_0fbet"]
-[ext_resource type="Script" uid="uid://dy5wb4mpviob8" path="res://Scripts/button_2.gd" id="2_07a3t"]
 
 [sub_resource type="FontFile" id="FontFile_cpqb8"]
 subpixel_positioning = 0
@@ -151,6 +150,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "1"
 script = ExtResource("1_0fbet")
+level = "res://Scenes/level_one.tscn"
 
 [node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1929025039]
 custom_minimum_size = Vector2(100, 100)
@@ -159,7 +159,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "2"
-script = ExtResource("2_07a3t")
+script = ExtResource("1_0fbet")
+level = "res://Scenes/level_two.tscn"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=614879316]
 layout_mode = 2
@@ -173,6 +174,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "3"
+script = ExtResource("1_0fbet")
+level = "res://Scenes/level_three.tscn"
 
 [node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1705185813]
 custom_minimum_size = Vector2(100, 100)
@@ -184,3 +187,4 @@ text = "4"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Button" to="PanelContainer/VBoxContainer/HBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Button2" to="PanelContainer/VBoxContainer/HBoxContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Button" to="PanelContainer/VBoxContainer/HBoxContainer2/Button" method="_on_pressed"]

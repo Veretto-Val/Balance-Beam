@@ -114,6 +114,7 @@ text = "Use WASD to control the blue paddles!"
 
 [connection signal="body_entered" from="Death Border" to="Ball" method="_on_death_border_body_entered"]
 [connection signal="body_entered" from="Death Border" to="Camera2D" method="_on_death_border_body_entered"]
+[connection signal="body_entered" from="Goal/Area2D" to="Camera2D/Control/Label" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Goal/Area2D" to="Death Border" method="_on_area_2d_body_entered"]
 
 [editable path="Camera2D"]
