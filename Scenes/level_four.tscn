@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://dd10ab02ydt5c"]
+
+[ext_resource type="PackedScene" uid="uid://dkntxiqy4o61a" path="res://Prefabs/ball.tscn" id="1_jt17j"]
+[ext_resource type="PackedScene" uid="uid://dbqulmtymx0wg" path="res://Prefabs/camera_2d.tscn" id="2_j4hod"]
+[ext_resource type="PackedScene" uid="uid://cnhg6t14fdy32" path="res://Prefabs/Paddles/pinball_paddle_blue.tscn" id="3_ur1eb"]
+[ext_resource type="PackedScene" uid="uid://b4n6ogutigx1e" path="res://Prefabs/Paddles/pinball_paddle_red.tscn" id="4_52hfb"]
+[ext_resource type="PackedScene" uid="uid://dahbs4qkv08mj" path="res://Prefabs/Environment/death_border.tscn" id="5_87oay"]
+[ext_resource type="PackedScene" uid="uid://b8i1pshh4v0o" path="res://Prefabs/Paddles/balance_beam_blue.tscn" id="5_f7bm8"]
+[ext_resource type="PackedScene" uid="uid://b65hpmj5ltkel" path="res://Prefabs/Environment/checkpoint.tscn" id="6_sacsd"]
+[ext_resource type="PackedScene" uid="uid://o2f2cergl618" path="res://Prefabs/Environment/rectangle.tscn" id="8_1xq34"]
+[ext_resource type="PackedScene" uid="uid://dgn7mnrk60qh3" path="res://Prefabs/goal.tscn" id="9_w2sgr"]
+
+[node name="Level Four" type="Node2D"]
+
+[node name="Ball" parent="." instance=ExtResource("1_jt17j")]
+position = Vector2(191, 265)
+
+[node name="Camera2D" parent="." instance=ExtResource("2_j4hod")]
+position = Vector2(955, 16)
+zoom = Vector2(0.5, 0.5)
+startX = 995
+startY = 16
+startZoom = 0.5
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="Paddles" type="Node" parent="Environment"]
+
+[node name="PinballPaddleBlue" parent="Environment/Paddles" instance=ExtResource("3_ur1eb")]
+position = Vector2(113, 438)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinballPaddleRed" parent="Environment/Paddles" instance=ExtResource("4_52hfb")]
+position = Vector2(1773, 70)
+rotation = 2.78205
+scale = Vector2(0.5, 0.5)
+
+[node name="PinballPaddleBlue2" parent="Environment/Paddles" instance=ExtResource("3_ur1eb")]
+position = Vector2(355, -466)
+scale = Vector2(0.5, 0.5)
+
+[node name="PinballPaddleRed2" parent="Environment/Paddles" instance=ExtResource("4_52hfb")]
+position = Vector2(1657, -1284)
+rotation = 2.78205
+scale = Vector2(0.5, 0.5)
+
+[node name="Balance Beam Blue" parent="Environment/Paddles" instance=ExtResource("5_f7bm8")]
+position = Vector2(520, -1908)
+scale = Vector2(2, 2)
+
+[node name="Death Border" parent="Environment" instance=ExtResource("5_87oay")]
+position = Vector2(957, 70)
+
+[node name="Checkpoints" type="Node" parent="Environment"]
+
+[node name="Checkpoint" parent="Environment/Checkpoints" instance=ExtResource("6_sacsd")]
+position = Vector2(1093, -85)
+rotation = 1.5708
+scale = Vector2(0.048, -100)
+x = 995.0
+y = -300.0
+zoom = 0.5
+
+[node name="Checkpoint2" parent="Environment/Checkpoints" instance=ExtResource("6_sacsd")]
+position = Vector2(1028, -608)
+rotation = 1.5708
+scale = Vector2(0.048, -100)
+x = 995.0
+y = -900.0
+zoom = 0.5
+
+[node name="Checkpoint3" parent="Environment/Checkpoints" instance=ExtResource("6_sacsd")]
+position = Vector2(1113, -1411)
+rotation = 1.5708
+scale = Vector2(0.048, -100)
+x = 995.0
+y = -1700.0
+zoom = 0.5
+
+[node name="Checkpoint4" parent="Environment/Checkpoints" instance=ExtResource("6_sacsd")]
+position = Vector2(1122, -1677)
+rotation = 1.5708
+scale = Vector2(0.048, -100)
+x = 3000.0
+y = -3000.0
+zoom = 0.1
+
+[node name="Rectangle" parent="." instance=ExtResource("8_1xq34")]
+position = Vector2(4299, -355)
+scale = Vector2(3, 4)
+
+[node name="Rectangle2" parent="." instance=ExtResource("8_1xq34")]
+position = Vector2(6626, -344)
+scale = Vector2(3, 4)
+
+[node name="Goal" parent="." instance=ExtResource("9_w2sgr")]
+position = Vector2(5708, -259)
+scale = Vector2(2, 2)
+
+[connection signal="body_entered" from="Environment/Death Border" to="Ball" method="_on_death_border_body_entered"]
+[connection signal="body_entered" from="Environment/Death Border" to="Camera2D" method="_on_death_border_body_entered"]

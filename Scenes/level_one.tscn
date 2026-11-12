@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://blpwp35s66g3e"]
+[gd_scene load_steps=10 format=3 uid="uid://blpwp35s66g3e"]
 
 [ext_resource type="PackedScene" uid="uid://b8i1pshh4v0o" path="res://Prefabs/Paddles/balance_beam_blue.tscn" id="1_xb256"]
 [ext_resource type="PackedScene" uid="uid://dkntxiqy4o61a" path="res://Prefabs/ball.tscn" id="2_0n17p"]
@@ -12,90 +12,92 @@
 [sub_resource type="LabelSettings" id="LabelSettings_ys0qe"]
 font_size = 60
 
-[node name="Level One" type="Node2D" unique_id=1960566302]
+[node name="Level One" type="Node2D"]
 
-[node name="Ball" parent="." unique_id=1703225557 instance=ExtResource("2_0n17p")]
+[node name="Ball" parent="." instance=ExtResource("2_0n17p")]
 position = Vector2(200, 200)
 
-[node name="Camera2D" parent="." unique_id=1435055010 instance=ExtResource("3_ys0qe")]
+[node name="Camera2D" parent="." instance=ExtResource("3_ys0qe")]
 position = Vector2(574.01, 329.757)
+startX = 574
+startY = 330
 
-[node name="Death Border" parent="." unique_id=944357562 instance=ExtResource("4_b7vm3")]
+[node name="Death Border" parent="." instance=ExtResource("4_b7vm3")]
 position = Vector2(10628, 3534)
 
-[node name="Environment" type="Node2D" parent="." unique_id=1624682636]
+[node name="Environment" type="Node2D" parent="."]
 
-[node name="Slant2" parent="Environment" unique_id=740505630 instance=ExtResource("8_ys0qe")]
+[node name="Slant2" parent="Environment" instance=ExtResource("8_ys0qe")]
 position = Vector2(8680, -396)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(2, -2)
 
-[node name="Slant3" parent="Environment" unique_id=2082129137 instance=ExtResource("8_ys0qe")]
+[node name="Slant3" parent="Environment" instance=ExtResource("8_ys0qe")]
 position = Vector2(7563, 1408)
 scale = Vector2(2, 2)
 
-[node name="Slant" parent="Environment" unique_id=1951546292 instance=ExtResource("8_ys0qe")]
+[node name="Slant" parent="Environment" instance=ExtResource("8_ys0qe")]
 position = Vector2(648, 589)
 
-[node name="Paddles" type="Node2D" parent="." unique_id=756576116]
+[node name="Paddles" type="Node2D" parent="."]
 
-[node name="PinballPaddleBlue" parent="Paddles" unique_id=1901602113 instance=ExtResource("10_166gr")]
-position = Vector2(1062.0001, 928)
-rotation = 0.1308997
+[node name="PinballPaddleBlue" parent="Paddles" instance=ExtResource("10_166gr")]
+position = Vector2(1062, 928)
+rotation = 0.1309
 
-[node name="Balance Beam Blue" parent="Paddles" unique_id=2106194934 instance=ExtResource("1_xb256")]
+[node name="Balance Beam Blue" parent="Paddles" instance=ExtResource("1_xb256")]
 position = Vector2(3248, 1198)
 scale = Vector2(3, 3)
 
-[node name="PinballPaddleBlue2" parent="Paddles" unique_id=1501050822 instance=ExtResource("10_166gr")]
+[node name="PinballPaddleBlue2" parent="Paddles" instance=ExtResource("10_166gr")]
 position = Vector2(8540, 2047)
-rotation = 0.06981316
+rotation = 0.0698132
 
-[node name="Checkpoints" type="Node2D" parent="." unique_id=353229186]
+[node name="Checkpoints" type="Node2D" parent="."]
 
-[node name="Checkpoint" parent="Checkpoints" unique_id=1621610199 instance=ExtResource("7_o1635")]
-position = Vector2(517.00006, 450.00006)
-rotation = 3.1415927
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("7_o1635")]
+position = Vector2(517, 450)
+rotation = 3.14159
 scale = Vector2(0.0481145, -456.27)
 x = 2000.0
 y = 750.0
 zoom = 0.3
 
-[node name="Checkpoint2" parent="Checkpoints" unique_id=1497390079 instance=ExtResource("7_o1635")]
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("7_o1635")]
 position = Vector2(1863, 537)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(0.0481145, -456.27)
 x = 4500.0
 y = 700.0
 zoom = 0.2
 
-[node name="Checkpoint3" parent="Checkpoints" unique_id=1547274238 instance=ExtResource("7_o1635")]
-position = Vector2(4359, 510.00003)
-rotation = 3.1415927
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("7_o1635")]
+position = Vector2(4359, 510)
+rotation = 3.14159
 scale = Vector2(0.0481145, -456.27)
 x = 5000.0
 y = 500.0
 zoom = 0.2
 
-[node name="Checkpoint4" parent="Checkpoints" unique_id=1636957272 instance=ExtResource("7_o1635")]
+[node name="Checkpoint4" parent="Checkpoints" instance=ExtResource("7_o1635")]
 position = Vector2(7271, 647)
-rotation = 3.1415927
+rotation = 3.14159
 scale = Vector2(0.0481145, -456.27)
 x = 9500.0
 y = 700.0
 zoom = 0.1
 
-[node name="Goal" parent="." unique_id=1433699395 instance=ExtResource("9_ys0qe")]
+[node name="Goal" parent="." instance=ExtResource("9_ys0qe")]
 position = Vector2(12434, 2248)
 scale = Vector2(3, 3)
 
-[node name="Control" type="Control" parent="." unique_id=1047474904]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label2" type="Label" parent="Control" unique_id=1148091548]
+[node name="Label2" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 3914.0
 offset_top = 338.0
@@ -104,7 +106,7 @@ offset_bottom = 421.0
 text = "Hold shift to swing the paddles extra hard!"
 label_settings = SubResource("LabelSettings_ys0qe")
 
-[node name="Label" type="Label" parent="Control" unique_id=961442399]
+[node name="Label" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 426.0
 offset_top = 142.0
@@ -114,7 +116,7 @@ text = "Use WASD to control the blue paddles!"
 
 [connection signal="body_entered" from="Death Border" to="Ball" method="_on_death_border_body_entered"]
 [connection signal="body_entered" from="Death Border" to="Camera2D" method="_on_death_border_body_entered"]
-[connection signal="body_entered" from="Goal/Area2D" to="Camera2D/Control/Label" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Goal/Area2D" to="Camera2D" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Goal/Area2D" to="Death Border" method="_on_area_2d_body_entered"]
 
 [editable path="Camera2D"]

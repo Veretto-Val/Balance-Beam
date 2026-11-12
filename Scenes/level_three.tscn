@@ -1,42 +1,67 @@
-[gd_scene format=3 uid="uid://5y5n7t7r63a0"]
+[gd_scene load_steps=10 format=3 uid="uid://5y5n7t7r63a0"]
 
 [ext_resource type="PackedScene" uid="uid://dkntxiqy4o61a" path="res://Prefabs/ball.tscn" id="1_v3was"]
 [ext_resource type="PackedScene" uid="uid://dbqulmtymx0wg" path="res://Prefabs/camera_2d.tscn" id="2_ajwv2"]
 [ext_resource type="PackedScene" uid="uid://cnhg6t14fdy32" path="res://Prefabs/Paddles/pinball_paddle_blue.tscn" id="3_5amml"]
 [ext_resource type="PackedScene" uid="uid://b4n6ogutigx1e" path="res://Prefabs/Paddles/pinball_paddle_red.tscn" id="4_cxaom"]
+[ext_resource type="PackedScene" uid="uid://cw0ep4dya3wh3" path="res://Prefabs/Paddles/balance_beam_red.tscn" id="5_mbeuf"]
 [ext_resource type="PackedScene" uid="uid://dahbs4qkv08mj" path="res://Prefabs/Environment/death_border.tscn" id="6_h1s7m"]
+[ext_resource type="PackedScene" uid="uid://o2f2cergl618" path="res://Prefabs/Environment/rectangle.tscn" id="7_74n2d"]
+[ext_resource type="PackedScene" uid="uid://dgn7mnrk60qh3" path="res://Prefabs/goal.tscn" id="8_ai5nt"]
+[ext_resource type="PackedScene" uid="uid://c1irfisp5nvlb" path="res://Prefabs/Environment/slant.tscn" id="8_mkvgf"]
 
-[node name="Level Three" type="Node2D" unique_id=512159323]
+[node name="Level Three" type="Node2D"]
 
-[node name="Ball" parent="." unique_id=1584748727 instance=ExtResource("1_v3was")]
+[node name="Ball" parent="." instance=ExtResource("1_v3was")]
 position = Vector2(218, 136)
 
-[node name="Camera2D" parent="." unique_id=1435055010 instance=ExtResource("2_ajwv2")]
-position = Vector2(1379, -526)
-zoom = Vector2(0.415, 0.415)
-startX = 1390
-startY = -126
-startZoom = 0.415
+[node name="Camera2D" parent="." instance=ExtResource("2_ajwv2")]
+position = Vector2(3000, -800)
+zoom = Vector2(0.2, 0.2)
+startX = 3000
+startY = -800
+startZoom = 0.2
+start_font_size = 500
 
-[node name="Paddles" type="Node" parent="." unique_id=668185413]
+[node name="Paddles" type="Node" parent="."]
 
-[node name="PinballPaddleBlue3" parent="Paddles" unique_id=1627000176 instance=ExtResource("3_5amml")]
-position = Vector2(3030, -121.99997)
+[node name="PinballPaddleBlue" parent="Paddles" instance=ExtResource("3_5amml")]
+position = Vector2(134, 451)
+rotation = 0.380482
 scale = Vector2(0.63, 0.63)
 
-[node name="PinballPaddleBlue" parent="Paddles" unique_id=755211960 instance=ExtResource("3_5amml")]
-position = Vector2(134, 451.00003)
+[node name="PinballPaddleBlue2" parent="Paddles" instance=ExtResource("3_5amml")]
+position = Vector2(1721, -167)
+rotation = 0.380482
 scale = Vector2(0.63, 0.63)
 
-[node name="PinballPaddleBlue2" parent="Paddles" unique_id=1103801459 instance=ExtResource("4_cxaom")]
-position = Vector2(2151.9998, -297.99997)
-rotation = 3.5133479
-scale = Vector2(-0.63, 0.63)
+[node name="PinballPaddleRed" parent="Paddles" instance=ExtResource("4_cxaom")]
+position = Vector2(3794, 117)
+rotation = 2.78205
+scale = Vector2(1, 1)
 
-[node name="Environment" type="Node" parent="." unique_id=1491590617]
+[node name="Balance Beam Red" parent="Paddles" instance=ExtResource("5_mbeuf")]
+position = Vector2(2941, -1440)
+scale = Vector2(3, 3)
 
-[node name="Death Border" parent="Environment" unique_id=944357562 instance=ExtResource("6_h1s7m")]
+[node name="Environment" type="Node" parent="."]
+
+[node name="Death Border" parent="Environment" instance=ExtResource("6_h1s7m")]
 position = Vector2(1561, -41)
+
+[node name="Rectangle" parent="Environment" instance=ExtResource("7_74n2d")]
+position = Vector2(5886, -1178)
+scale = Vector2(3, 15)
+
+[node name="Rectangle2" parent="Environment" instance=ExtResource("7_74n2d")]
+position = Vector2(3893, -504)
+
+[node name="Slant" parent="Environment" instance=ExtResource("8_mkvgf")]
+position = Vector2(3392, -764)
+scale = Vector2(-1, -0.25)
+
+[node name="Goal" parent="." instance=ExtResource("8_ai5nt")]
+position = Vector2(5335, 119)
 
 [connection signal="body_entered" from="Environment/Death Border" to="Ball" method="_on_death_border_body_entered"]
 [connection signal="body_entered" from="Environment/Death Border" to="Camera2D" method="_on_death_border_body_entered"]
